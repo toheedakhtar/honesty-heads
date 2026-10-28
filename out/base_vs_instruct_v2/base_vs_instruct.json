@@ -62816,5 +62816,13 @@
         }
       }
     }
+  },
+  "extensions": {
+    "base": {
+      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/base/persona/persona_stats.json"
+    },
+    "instruct": {
+      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/instruct/persona/persona_stats.json"
+    }
   }
 }
