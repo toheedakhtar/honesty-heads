@@ -62819,10 +62819,12 @@
   },
   "extensions": {
     "base": {
-      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/base/persona/persona_stats.json"
+      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/base/persona/persona_stats.json",
+      "ablation_and_controls": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/base/ablation/ablate_nat.json"
     },
     "instruct": {
-      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/instruct/persona/persona_stats.json"
+      "persona": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/instruct/persona/persona_stats.json",
+      "ablation_and_controls": "/home/honesty-heads/out/base_vs_instruct_v2/extensions/instruct/ablation/ablate_nat.json"
     }
   }
 }
