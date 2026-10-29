@@ -671,7 +671,10 @@ def main() -> None:
         result = json.loads(combined.read_text(encoding="utf-8"))
         extensions = {"base": run_extensions("base", a.base_model, result["base"], a, root, out),
                       "instruct": run_extensions("instruct", a.instruct_model, result["instruct"], a, root, out)}
-        result.setdefault("extensions", {}).update({k: v for k, v in extensions.items() if v})
+        recorded = result.setdefault("extensions", {})
+        for checkpoint, values in extensions.items():
+            if values:
+                recorded.setdefault(checkpoint, {}).update(values)
         dump_json(combined, result)
         print(f"Updated extension outputs in {combined}", flush=True)
         return

@@ -963,6 +963,12 @@ class NatEdit:
 
     def __init__(self, eng, dl: dict, rows: list, clean: dict):
         self.eng, self.dl, self.ms, self.clean = eng, dl, rows, clean
+        # run_rows also accepts Shift, which may carry a residual-stream
+        # intervention and therefore exposes ``res``/``bound``.  NatEdit only
+        # edits head outputs, so explicitly advertise that no boundary edit is
+        # required.  Without this, ablation and the other NatEdit callers fail
+        # before the forward pass when run_rows checks part.res.
+        self.res = False
 
     def sub(self, a: int, b: int) -> "NatEdit":
         return NatEdit(self.eng, self.dl, self.ms[a:b], self.clean)
